@@ -1,0 +1,24 @@
+ion-header {
+    justify-content: center;
+}
+
+ion-title[slot="primary"] {
+    position: absolute; /* Faz o título sair da posição do slot */
+    left: 50%; /* Move para o centro */
+    transform: translateX(-50%); /* Ajusta para o verdadeiro centro */
+    text-align: center; /* Garante que o texto dentro do título esteja centralizado */
+  }
+
+.modal-text-container {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat';
+    //justify-content: center;
+    //align-items: center;
+    height: 100vh;
+    font-size: x-large;
+    text-align: center;
+    max-width: 90%;
+    margin: auto;
+    margin-top: 13vh;
+}

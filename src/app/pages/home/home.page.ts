@@ -1,20 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { Component } from '@angular/core';
+import { IonContent, ModalController, IonButton } from '@ionic/angular/standalone';
+import { InfoModalComponent } from 'src/app/info-modal/info-modal.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonContent, IonButton ]
 })
-export class HomePage implements OnInit {
+export class HomePage {
 
-  constructor() { }
+  constructor(
+    private modalCtrl: ModalController
+  ) { }
 
-  ngOnInit() {
+  // Método para abrir o modal
+  async showInfo() {
+    const modal = await this.modalCtrl.create({
+      component: InfoModalComponent,
+    });
+    return await modal.present();
   }
-
 }
