@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular/standalone';
 import { IonInput, IonHeader, IonToolbar, IonTitle, IonButtons,
-          IonButton, IonContent, IonList, IonItem, IonLabel, IonIcon } from '@ionic/angular/standalone';
+         IonButton, IonContent, IonList, IonItem, IonLabel, IonIcon,
+         ToastController } from '@ionic/angular/standalone';
 import { VolunteerService } from 'src/app/services/volunteer.service';
 
 @Component({
@@ -21,7 +22,8 @@ export class EditVolunteerModalComponent implements OnInit {
 
   constructor(
     private modalCtrl: ModalController,
-    private volunteerService: VolunteerService
+    private volunteerService: VolunteerService,
+    private toastController: ToastController
   ) { }
 
   ngOnInit() {
@@ -39,6 +41,7 @@ export class EditVolunteerModalComponent implements OnInit {
     if (this.name && this.email && this.interestArea) {
       this.volunteerService.editVolunteer(this.id, this.name, this.email, this.interestArea).subscribe(
         response => {
+          this.showToast('Voluntário editado com sucesso!');
           console.log('Voluntário editado com sucesso', response);
           this.name = '';
           this.email = '';
@@ -46,10 +49,12 @@ export class EditVolunteerModalComponent implements OnInit {
           this.closeModal();
         },
         error => {
+          this.showToast('Erro ao editar voluntário', 'danger');
           console.error('Erro ao editar voluntário', error);
         }
       );
     } else {
+      this.showToast('Por favor, preencha todos os campos!', 'danger');
       console.log('Por favor, preencha todos os campos!');
     }
   }
@@ -67,5 +72,14 @@ export class EditVolunteerModalComponent implements OnInit {
   }
   onInputInterestArea(event: any) {
     this.interestArea = event.target.value || '';
+  }
+
+  async showToast(message: string, color: string = 'success') {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000,
+      color: color
+    });
+    toast.present();
   }
 }
