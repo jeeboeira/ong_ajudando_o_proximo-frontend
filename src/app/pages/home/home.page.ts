@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { IonContent, ModalController, IonButton } from '@ionic/angular/standalone';
-import { InfoModalComponent } from 'src/app/info-modal/info-modal.component';
 import { NavController } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
+import { InfoModalComponent } from 'src/app/modals/info-modal/info-modal.component';
 
 @Component({
   selector: 'app-home',

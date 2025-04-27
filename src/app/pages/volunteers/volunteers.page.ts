@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { IonIcon, IonBackButton, IonButton, IonButtons, IonContent, IonTitle, IonToolbar, IonList, IonItem, IonLabel } from '@ionic/angular/standalone';
 import { VolunteerService } from 'src/app/services/volunteer.service';
 import { Storage } from '@ionic/storage-angular';
-
+import { AddVolunteerModalComponent } from 'src/app/modals/add-volunteer-modal/add-volunteer-modal.component';
+import { ModalController } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-volunteers',
@@ -21,7 +22,8 @@ export class VolunteersPage implements OnInit {
 
   constructor(
     private volunteerService: VolunteerService,
-    private storage: Storage
+    private storage: Storage,
+    private modalCtrl: ModalController
   ) { }
 
   async ngOnInit() {
@@ -39,6 +41,14 @@ export class VolunteersPage implements OnInit {
         console.error('Erro ao obter a lista de voluntários:', error);
       }
     );
+  }
+
+  // Método para abrir o formulário de inscrição
+  async openVolunteerForm() {
+    const modal = await this.modalCtrl.create({
+      component: AddVolunteerModalComponent,
+    });
+    return await modal.present();
   }
 
   // Função para adicionar voluntário
