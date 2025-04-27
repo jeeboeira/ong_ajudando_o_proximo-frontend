@@ -1,6 +1,17 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
 /* variables.scss */
-:root {
-    --ion-background-color: #D9F195;  /* Cor de fundo */
+ion-toolbar {
+    --background: #bb2c2c;
+    --color: #ffffff;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
+
+ion-button, ion-back-button, ion-icon {
+  color: white;
+}
+
+ion-item:hover {
+  transform: scale(1.02);
+}

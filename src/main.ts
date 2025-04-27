@@ -5,7 +5,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { addIcons } from 'ionicons';
-import { add } from 'ionicons/icons';
+import { add, chevronBackOutline } from 'ionicons/icons';
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
@@ -22,5 +22,6 @@ bootstrapApplication(AppComponent, {
 });
 
 addIcons({
-  'add': add
+  'add': add,
+  'chevron-back-outline': chevronBackOutline,
 });

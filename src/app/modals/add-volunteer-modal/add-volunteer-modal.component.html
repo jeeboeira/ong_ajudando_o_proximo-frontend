@@ -2,48 +2,56 @@
   <ion-toolbar>
     <ion-title slot="primary">Seja um Voluntário</ion-title>
     <ion-buttons slot="start">
-      <ion-button (click)="closeModal()">Fechar</ion-button>
+      <ion-button (click)="closeModal()" fill="clear" color="light">
+        <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
+<ion-content>
+  <!-- Texto de introdução -->
+  <div class="modal-text-container">
+    <p>Seja parte da mudança! Faça sua inscrição e nos conte como você pode ajudar.</p>
+  </div>
 <!-- Formulário de Cadastro -->
-<ion-list>
+  <ion-list>
 
-  <!-- Nome -->
-  <ion-item>
-    <ion-input
-      label="Nome:" placeholder="Insira seu nome"
-      maxlength="100"
-      (ionInput)="onInputName($event)">
-    </ion-input>
-  </ion-item>
+    <!-- Nome -->
+    <ion-item>
+      <ion-input
+        label="Nome:" placeholder="Insira seu nome"
+        maxlength="100"
+        (ionInput)="onInputName($event)">
+      </ion-input>
+    </ion-item>
 
-  <!-- E-mail -->
-  <ion-item>
-    <ion-input
-      label="E-mail:" placeholder="Insira seu e-mail"
-      maxlength="50"
-      (ionInput)="onInputEmail($event)">
-    </ion-input>
-  </ion-item>
+    <!-- E-mail -->
+    <ion-item>
+      <ion-input
+        label="E-mail:" placeholder="Insira seu e-mail"
+        maxlength="50"
+        (ionInput)="onInputEmail($event)">
+      </ion-input>
+    </ion-item>
 
-  <!-- Interesses -->
-  <ion-item>
-    <ion-label position="stacked">Área de Interesse</ion-label>
-    <ion-textarea
-      placeholder="Descreva as áreas em que você pode nos ajudar!"
-      autoGrow="true"
-      [counter]="true"
-      maxlength="200"
-      (ionInput)="onInputInterestArea($event)">
-    </ion-textarea>
-  </ion-item>
-</ion-list>
+    <!-- Interesses -->
+    <ion-item>
+      <ion-label position="stacked">Área de Interesse</ion-label>
+      <ion-textarea
+        placeholder="Descreva as áreas em que você pode nos ajudar!"
+        autoGrow="true"
+        [counter]="true"
+        maxlength="200"
+        (ionInput)="onInputInterestArea($event)">
+      </ion-textarea>
+    </ion-item>
+  </ion-list>
 
-<!-- Botão para enviar formulário -->
-<div class="buttons-container">
-  <ion-button class="send-form-button" shape="round" (click)="addVolunteer()">
-    Cadastrar
-  </ion-button>
-</div>
+  <!-- Botão para enviar formulário -->
+  <div class="buttons-container">
+    <ion-button class="send-form-button" shape="round" (click)="addVolunteer()">
+      Cadastrar
+    </ion-button>
+  </div>
+</ion-content>

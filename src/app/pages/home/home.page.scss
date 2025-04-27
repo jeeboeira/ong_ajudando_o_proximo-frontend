@@ -1,14 +1,17 @@
+ion-content {
+    --background: #D9F195;
+  }
+  
 .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  //height: 55vh;
 }
 
 .logo {
     max-width: 80%;
     height: auto;
-    margin-top: 7vh;
+    padding-top: 7vh;
 }
 
 .title-container {
@@ -28,15 +31,16 @@
     font-size: 1.8rem;
     text-align: center;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
     margin-top: 1vh;
 }
 
 ion-button {
     --color: #9e0d0d;
+    --background: #D9F195;
+    --background-activated: #c8e67a;
     --font-family:'Montserrat';
     --border-color: #9e0d0d;
-    --background-activated: #D9F195;
     --border-width: 1px;
     border-radius: 9999px;
 }
@@ -51,6 +55,6 @@ ion-button {
 .login-button {
     margin-top: -1vh;
     --background: #D9F195;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-    transform: translateY(20px);
+    box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.6);
+    transform: translateY(15px);
 }

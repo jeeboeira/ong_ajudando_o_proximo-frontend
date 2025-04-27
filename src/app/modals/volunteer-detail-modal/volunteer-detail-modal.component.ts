@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular/standalone';
-import { IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonContent, IonList, IonItem, IonLabel, IonNote } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonContent, IonList, IonItem, IonLabel, IonNote, IonIcon } from '@ionic/angular/standalone';
 import { EditVolunteerModalComponent } from '../edit-volunteer-modal/edit-volunteer-modal.component';
 import { VolunteerService } from 'src/app/services/volunteer.service';
 
@@ -9,7 +9,7 @@ import { VolunteerService } from 'src/app/services/volunteer.service';
   templateUrl: './volunteer-detail-modal.component.html',
   styleUrls: ['./volunteer-detail-modal.component.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonContent, IonList, IonItem, IonLabel, IonNote]
+  imports: [IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonContent, IonList, IonItem, IonLabel, IonNote, IonIcon]
 })
 export class VolunteerDetailModalComponent {
   @Input() volunteer: any;

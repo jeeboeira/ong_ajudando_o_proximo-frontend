@@ -1,13 +1,18 @@
-<ion-toolbar>
-  <ion-title slot="primary">Sobre a ONG </ion-title>
-  <ion-buttons slot="start">
-  <ion-button (click)="closeModal()">Fechar</ion-button>
-  </ion-buttons>
-</ion-toolbar>
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="primary">Sobre a ONG </ion-title>
+    <ion-buttons slot="start">
+    <ion-button (click)="closeModal()" fill="clear" color="light">
+      <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+    </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
-
-<div class ="modal-text-container">
-  <p>A ONG Ajudando o Próximo é uma organização sem fins lucrativos que visa ajudar pessoas em situação de vulnerabilidade social.</p>
-  <p>Qualquer pessoa pode ajudar, seja com doações, trabalho voluntário ou divulgando nosso trabalho.</p>
-  <p>Seja parte da mudança! Faça sua inscrição e nos conte como você pode ajudar.</p>
-</div>
+<ion-content>
+  <div class ="modal-text-container">
+    <p>A ONG Ajudando o Próximo é uma organização sem fins lucrativos que visa ajudar pessoas em situação de vulnerabilidade social.</p>
+    <p>Qualquer pessoa pode ajudar, seja com doações, trabalho voluntário ou divulgando nosso trabalho.</p>
+    <p>Seja parte da mudança! Faça sua inscrição e nos conte como você pode ajudar.</p>
+  </div>
+</ion-content>

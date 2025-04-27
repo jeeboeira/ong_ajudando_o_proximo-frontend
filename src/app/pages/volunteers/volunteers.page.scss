@@ -1,10 +1,33 @@
-ion-header {
-    justify-content: center;
+ion-title[slot="primary"] {
+    position: absolute;           /* Faz o título sair da posição do slot */
+    left: 50%;                    /* Move para o centro */
+    transform: translateX(-50%);  /* Ajusta para o verdadeiro centro */
+    text-align: center;           /* Garante que o texto dentro do título esteja centralizado */
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+  }
+
+ion-content {
+  --background: #f9f9f9;
 }
 
-ion-title[slot="primary"] {
-    position: absolute; /* Faz o título sair da posição do slot */
-    left: 50%; /* Move para o centro */
-    transform: translateX(-50%); /* Ajusta para o verdadeiro centro */
-    text-align: center; /* Garante que o texto dentro do título esteja centralizado */
-  }
+ion-item {
+  --background: white;
+  margin: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+ion-label h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+ion-label p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+}

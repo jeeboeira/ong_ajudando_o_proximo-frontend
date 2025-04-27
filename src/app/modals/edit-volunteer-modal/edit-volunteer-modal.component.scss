@@ -1,0 +1,47 @@
+ion-title[slot="primary"] {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: white;
+  }
+  
+ion-content {
+  --background: #f9f9f9;
+}
+
+ion-list {
+  background: transparent;
+}
+
+ion-item {
+  --background: white;
+  margin: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.modal-text-container {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  margin: 20px;
+  color: #333;
+}
+
+.buttons-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.send-form-button {
+  --background: #4CAF50;
+  --color: white;
+  border-radius: 9999px;
+  font-size: 1.2rem;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
+}

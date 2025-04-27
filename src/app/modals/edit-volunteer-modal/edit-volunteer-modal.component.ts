@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular/standalone';
 import { IonInput, IonHeader, IonToolbar, IonTitle, IonButtons,
-          IonButton, IonContent, IonList, IonItem, IonLabel, IonNote } from '@ionic/angular/standalone';
+          IonButton, IonContent, IonList, IonItem, IonLabel, IonIcon } from '@ionic/angular/standalone';
 import { VolunteerService } from 'src/app/services/volunteer.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { VolunteerService } from 'src/app/services/volunteer.service';
   styleUrls: ['./edit-volunteer-modal.component.scss'],
   standalone: true,
   imports: [IonInput, IonHeader, IonToolbar, IonTitle, IonButtons, IonButton,
-            IonContent, IonList, IonItem, IonLabel, IonNote]
+            IonContent, IonList, IonItem, IonLabel, IonIcon]
 })
 export class EditVolunteerModalComponent implements OnInit {
   @Input() volunteer: any;
@@ -27,16 +27,15 @@ export class EditVolunteerModalComponent implements OnInit {
   ngOnInit() {
     if (this.volunteer) {
       // Atribuindo os valores do volunteer aos campos internos
-      this.id = this.volunteer._id;  // Aqui você usa o _id
+      this.id = this.volunteer._id;
       this.name = this.volunteer.name;
       this.email = this.volunteer.email;
       this.interestArea = this.volunteer.interestArea;
     }
-    console.log('ID do voluntário:', this.id); // Verifique o ID aqui
   }
 
   // Método para editar o voluntário
-  editVolunteer(volunteer: any) {
+  editVolunteer() {
     if (this.name && this.email && this.interestArea) {
       this.volunteerService.editVolunteer(this.id, this.name, this.email, this.interestArea).subscribe(
         response => {

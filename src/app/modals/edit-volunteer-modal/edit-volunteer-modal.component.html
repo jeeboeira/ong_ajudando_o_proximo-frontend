@@ -2,13 +2,14 @@
   <ion-toolbar>
     <ion-title slot="primary">Editar Voluntário</ion-title>
     <ion-buttons slot="start">
-      <ion-button (click)="closeModal()">Fechar</ion-button>
+      <ion-button (click)="closeModal()" fill="clear" color="light">
+        <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
   <!-- Formulário com os dados -->
   <ion-list>
     <!-- Nome -->
@@ -45,9 +46,8 @@
 
   <!-- Botão para enviar formulário -->
   <div class="buttons-container">
-    <ion-button class="send-form-button" shape="round" (click)="editVolunteer(volunteer)">
+    <ion-button class="send-form-button" shape="round" (click)="editVolunteer()">
       Cadastrar
     </ion-button>
   </div>
-
 </ion-content>

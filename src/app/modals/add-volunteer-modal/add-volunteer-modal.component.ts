@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular/standalone';
-import { IonTextarea, IonLabel, IonInput, IonItem, IonList, IonHeader, IonToolbar, IonTitle, IonButtons, IonButton } from '@ionic/angular/standalone';
+import { Component } from '@angular/core';
+import { ModalController, IonTextarea, IonLabel, IonInput, IonItem, IonList, IonHeader,
+          IonToolbar, IonTitle, IonButtons, IonButton, IonContent, IonIcon } from '@ionic/angular/standalone';
 import { VolunteerService } from 'src/app/services/volunteer.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { VolunteerService } from 'src/app/services/volunteer.service';
   styleUrls: ['./add-volunteer-modal.component.scss'],
   standalone: true,
   imports: [IonTextarea, IonLabel, IonInput, IonItem, IonList, IonHeader,
-            IonToolbar, IonTitle, IonButtons, IonButton]
+            IonToolbar, IonTitle, IonButtons, IonButton, IonContent, IonIcon]
 })
 export class AddVolunteerModalComponent {
   name: string = '';

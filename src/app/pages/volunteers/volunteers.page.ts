@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonIcon, IonBackButton, IonButton, IonButtons, IonContent, IonTitle, IonToolbar, IonList, IonItem, IonLabel } from '@ionic/angular/standalone';
+import { IonIcon, IonBackButton, IonButton, IonButtons, IonContent, IonTitle, IonToolbar, IonList, IonItem, IonLabel, IonHeader } from '@ionic/angular/standalone';
 import { AddVolunteerModalComponent } from 'src/app/modals/add-volunteer-modal/add-volunteer-modal.component';
 import { ModalController } from '@ionic/angular/standalone';
 import { Storage } from '@ionic/storage-angular';
@@ -17,7 +17,7 @@ import { VolunteerDetailModalComponent } from 'src/app/modals/volunteer-detail-m
   standalone: true,
   imports: [IonIcon, IonBackButton, IonButtons, IonContent, IonTitle,
             IonToolbar, CommonModule, FormsModule, IonList, IonItem,
-            IonLabel, IonButton]
+            IonLabel, IonButton, IonHeader]
 })
 export class VolunteersPage implements OnInit {
   volunteers: any[] = [];
