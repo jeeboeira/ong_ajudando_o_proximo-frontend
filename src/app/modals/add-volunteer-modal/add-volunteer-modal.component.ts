@@ -26,7 +26,7 @@ export class AddVolunteerModalComponent {
     this.modalCtrl.dismiss();
   }
 
-    // Função para adicionar voluntário
+    // Método para adicionar voluntário
     addVolunteer() {
       if (this.name && this.email && this.interestArea) {
         this.volunteerService.addVolunteer(this.name, this.email, this.interestArea).subscribe(

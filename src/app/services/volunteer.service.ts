@@ -22,4 +22,14 @@ export class VolunteerService {
   addVolunteer(name: string, email: string, interestArea: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/volunteers`, { name, email, interestArea });
   }
+
+  // Função para editar um voluntário
+  editVolunteer(id: string, name: string, email: string, interestArea: string): Observable<any> {
+    return this.http.put(`${this.apiUrl}/volunteers/${id}`, { name, email, interestArea });
+  }
+  
+  // Função para excluir um voluntário
+  deleteVolunteer(id: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/volunteers/${id}`);
+  }
 }

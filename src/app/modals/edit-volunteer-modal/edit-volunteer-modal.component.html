@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="primary">Editar Voluntário</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Formulário com os dados -->
+  <ion-list>
+    <!-- Nome -->
+    <ion-item>
+      <ion-label>Nome:</ion-label>
+      <ion-input       
+        maxlength="100"
+        (ionInput)="onInputName($event)"
+        [value]="volunteer?.name">
+      </ion-input>
+    </ion-item>
+
+    <!-- E-mail -->
+    <ion-item>
+      <ion-label>E-mail:</ion-label>
+      <ion-input
+        maxlength="50"
+        (ionInput)="onInputEmail($event)"
+        [value]="volunteer?.email">
+      </ion-input>
+    </ion-item>
+
+    <!-- Área de Interesse -->
+    <ion-item>
+      <ion-label>Área de Interesse:</ion-label>
+      <ion-input
+        maxlength="200"
+        (ionInput)="onInputInterestArea($event)"
+        [value]="volunteer?.interestArea">
+      </ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <!-- Botão para enviar formulário -->
+  <div class="buttons-container">
+    <ion-button class="send-form-button" shape="round" (click)="editVolunteer(volunteer)">
+      Cadastrar
+    </ion-button>
+  </div>
+
+</ion-content>
