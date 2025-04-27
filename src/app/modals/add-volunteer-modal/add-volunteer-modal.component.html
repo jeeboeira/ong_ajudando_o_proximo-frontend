@@ -1,3 +1,37 @@
-<<p>
-  add-volunteer-modal works!
-</p>>
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="primary">Seja um Voluntário</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-list>
+  <ion-item>
+    <ion-input
+      label="Nome:" placeholder="Insira seu nome"
+      maxlength="100"
+      (ionInput)="onInputName($event)">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      label="E-mail:" placeholder="Insira seu e-mail"
+      maxlength="50"
+      (ionInput)="onInputEmail($event)">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Área de Interesse</ion-label>
+    <ion-textarea
+      placeholder="Descreva as áreas em que você pode nos ajudar!"
+      autoGrow="true"
+      [counter]="true"
+      maxlength="200"
+      (ionInput)="onInputInterestArea($event)">
+    </ion-textarea>
+  </ion-item>
+</ion-list>

@@ -1,0 +1,10 @@
+ion-header {
+    justify-content: center;
+}
+
+ion-title[slot="primary"] {
+    position: absolute; /* Faz o título sair da posição do slot */
+    left: 50%; /* Move para o centro */
+    transform: translateX(-50%); /* Ajusta para o verdadeiro centro */
+    text-align: center; /* Garante que o texto dentro do título esteja centralizado */
+  }
