@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="primary">Detalhes do Voluntário</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Nome:</ion-label>
+      <ion-note slot="end">{{ volunteer.name }}</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>E-mail:</ion-label>
+      <ion-note slot="end">{{ volunteer.email }}</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Área de Interesse:</ion-label>
+      <ion-note slot="end">{{ volunteer.interestArea }}</ion-note>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botão para editar voluntário -->
+  <div class="buttons-container">
+    <ion-button class="edit-volunteer-button" shape="round" (click)="editVolunteer()">
+      Editar
+    </ion-button>
+  </div>
+
+  <!-- Botão para apagar voluntário -->
+  <div class="buttons-container">
+    <ion-button class="delete-volunteer-button" shape="round" (click)="deleteVolunteer()">
+      Excluir
+    </ion-button>
+  </div>
+</ion-content>

@@ -6,6 +6,7 @@ import { AddVolunteerModalComponent } from 'src/app/modals/add-volunteer-modal/a
 import { ModalController } from '@ionic/angular/standalone';
 import { Storage } from '@ionic/storage-angular';
 import { VolunteerService } from 'src/app/services/volunteer.service';
+import { VolunteerDetailModalComponent } from 'src/app/modals/volunteer-detail-modal/volunteer-detail-modal.component';
 
 
 
@@ -48,7 +49,7 @@ export class VolunteersPage implements OnInit {
   // Método para abrir o formulário de inscrição
   async openVolunteerForm() {
     const modal = await this.modalCtrl.create({
-      component: AddVolunteerModalComponent,
+      component: AddVolunteerModalComponent
     });
 
     // Atualiza a lista de voluntários quando o modal fecha
@@ -58,5 +59,19 @@ export class VolunteersPage implements OnInit {
     return await modal.present();
   }
 
+  // Método para exibir os detalhes do voluntário
+  async openVolunteerDetails(volunteer: any) {
+    const modal = await this.modalCtrl.create({
+      component: VolunteerDetailModalComponent,
+      componentProps: {
+        volunteer: volunteer
+      }
+    });
 
+    // Atualiza a lista de voluntários quando o modal fecha
+    modal.onDidDismiss().then(() => {
+      this.getVolunteers();
+    });
+    return await modal.present();
+  }
 }
