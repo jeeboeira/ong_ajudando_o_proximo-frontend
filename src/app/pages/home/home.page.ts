@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonContent, ModalController, IonButton } from '@ionic/angular/standalone';
 import { InfoModalComponent } from 'src/app/info-modal/info-modal.component';
-
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -13,6 +13,7 @@ export class HomePage {
 
   constructor(
     private modalCtrl: ModalController
+    , private navCtrl: NavController
   ) { }
 
   // Método para abrir o modal
@@ -21,5 +22,10 @@ export class HomePage {
       component: InfoModalComponent,
     });
     return await modal.present();
+  }
+
+  // Método para realizar o login
+  async login() {
+    this.navCtrl.navigateForward('/volunteers');
   }
 }
