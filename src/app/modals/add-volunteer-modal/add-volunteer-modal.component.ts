@@ -28,17 +28,22 @@ export class AddVolunteerModalComponent {
 
     // Função para adicionar voluntário
     addVolunteer() {
-      this.volunteerService.addVolunteer(this.name, this.email, this.interestArea).subscribe(
-        response => {
-          console.log('Voluntário adicionado com sucesso', response);
-          this.name = '';
-          this.email = '';
-          this.interestArea = '';
-        },
-        error => {
-          console.error('Erro ao adicionar voluntário', error);
-        }
-      )
+      if (this.name && this.email && this.interestArea) {
+        this.volunteerService.addVolunteer(this.name, this.email, this.interestArea).subscribe(
+          response => {
+            console.log('Voluntário adicionado com sucesso', response);
+            this.name = '';
+            this.email = '';
+            this.interestArea = '';
+            this.closeModal();
+          },
+          error => {
+            console.error('Erro ao adicionar voluntário', error);
+          }
+        );
+      } else {
+        console.log('Por favor, preencha todos os campos!');
+      }
     }
 
     onInputName(event: any) {

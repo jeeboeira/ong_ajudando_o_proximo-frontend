@@ -50,6 +50,13 @@ export class VolunteersPage implements OnInit {
     const modal = await this.modalCtrl.create({
       component: AddVolunteerModalComponent,
     });
+
+    // Atualiza a lista de voluntários quando o modal fecha
+    modal.onDidDismiss().then(() => {
+      this.getVolunteers();
+    });
     return await modal.present();
   }
+
+
 }

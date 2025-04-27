@@ -7,7 +7,10 @@
   </ion-toolbar>
 </ion-header>
 
+<!-- Formulário de Cadastro -->
 <ion-list>
+
+  <!-- Nome -->
   <ion-item>
     <ion-input
       label="Nome:" placeholder="Insira seu nome"
@@ -16,6 +19,7 @@
     </ion-input>
   </ion-item>
 
+  <!-- E-mail -->
   <ion-item>
     <ion-input
       label="E-mail:" placeholder="Insira seu e-mail"
@@ -24,6 +28,7 @@
     </ion-input>
   </ion-item>
 
+  <!-- Interesses -->
   <ion-item>
     <ion-label position="stacked">Área de Interesse</ion-label>
     <ion-textarea
@@ -35,3 +40,10 @@
     </ion-textarea>
   </ion-item>
 </ion-list>
+
+<!-- Botão para enviar formulário -->
+<div class="buttons-container">
+  <ion-button class="send-form-button" shape="round" (click)="addVolunteer()">
+    Cadastrar
+  </ion-button>
+</div>
