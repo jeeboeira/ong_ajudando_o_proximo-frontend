@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonBackButton, IonButtons, IonContent, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonIcon, IonBackButton, IonButton, IonButtons, IonContent, IonTitle, IonToolbar, IonList, IonItem, IonLabel } from '@ionic/angular/standalone';
 import { VolunteerService } from 'src/app/services/volunteer.service';
 import { Storage } from '@ionic/storage-angular';
 
@@ -11,10 +11,13 @@ import { Storage } from '@ionic/storage-angular';
   templateUrl: './volunteers.page.html',
   styleUrls: ['./volunteers.page.scss'],
   standalone: true,
-  imports: [IonBackButton, IonButtons, IonContent, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonIcon, IonBackButton, IonButtons, IonContent, IonTitle, IonToolbar, CommonModule, FormsModule, IonList, IonItem, IonLabel, IonButton]
 })
 export class VolunteersPage implements OnInit {
   volunteers: any[] = [];
+  name: string = '';
+  email: string = '';
+  interestArea: string = '';
 
   constructor(
     private volunteerService: VolunteerService,
@@ -36,6 +39,21 @@ export class VolunteersPage implements OnInit {
         console.error('Erro ao obter a lista de voluntários:', error);
       }
     );
+  }
+
+  // Função para adicionar voluntário
+  addVolunteer() {
+    this.volunteerService.addVolunteer(this.name, this.email, this.interestArea).subscribe(
+      response => {
+        console.log('Voluntário adicionado com sucesso', response);
+        this.name = '';
+        this.email = '';
+        this.interestArea = '';
+      },
+      error => {
+        console.error('Erro ao adicionar voluntário', error);
+      }
+    )
   }
 
 }

@@ -18,4 +18,8 @@ export class VolunteerService {
     return this.http.get(`${this.apiUrl}/volunteers`);
   }
 
+  // Função para adicionar um novo voluntário
+  addVolunteer(name: string, email: string, interestArea: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/volunteers`, { name, email, interestArea });
+  }
 }
