@@ -15,6 +15,8 @@ import { VolunteerService } from 'src/app/services/volunteer.service';
 })
 export class EditVolunteerModalComponent implements OnInit {
   @Input() volunteer: any;
+  @Input() parentModal: any;
+
   id: string = '';
   name: string = '';
   email: string = '';
@@ -60,8 +62,11 @@ export class EditVolunteerModalComponent implements OnInit {
   }
 
   // Método para fechar o modal
-  closeModal() {
-    this.modalCtrl.dismiss();
+  async closeModal() {
+    await this.modalCtrl.dismiss(); // Fecha o modal filho
+    if (this.parentModal) {
+      await this.parentModal.modalCtrl.dismiss(); // Fecha o modal pai
+    }
   }
 
   onInputName(event: any) {

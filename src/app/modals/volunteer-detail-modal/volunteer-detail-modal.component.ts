@@ -23,12 +23,13 @@ export class VolunteerDetailModalComponent {
     private alertController: AlertController
   ) { }
 
-  // Método para abrir o formulário de inscrição
+  // Método para abrir o formulário de edição do voluntário
   async openVolunteerEditForm(volunteer: any) {
     const modal = await this.modalCtrl.create({
       component: EditVolunteerModalComponent,
       componentProps: {
-        volunteer: volunteer
+        volunteer: volunteer,
+        parentModal: this
       }
     });
     return await modal.present();
