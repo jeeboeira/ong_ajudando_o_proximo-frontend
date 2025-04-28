@@ -44,3 +44,19 @@ ion-item {
   font-size: 1.2rem;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
 }
+
+.thank-you-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);  /* Fundo semitransparente */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000; /* Para garantir que a caixa apareça acima de outros elementos */
+  width: 80%; /* Ou o tamanho que você preferir */
+  max-width: 400px; /* Limita o tamanho máximo da caixa */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}

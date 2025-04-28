@@ -2,6 +2,7 @@ import { Component} from '@angular/core';
 import { ModalController, IonTextarea, IonLabel, IonInput, IonItem, IonList, IonHeader,
           IonToolbar, IonTitle, IonButtons, IonButton, IonContent, IonIcon, ToastController } from '@ionic/angular/standalone';
 import { VolunteerService } from 'src/app/services/volunteer.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-add-volunteer-modal',
@@ -9,12 +10,14 @@ import { VolunteerService } from 'src/app/services/volunteer.service';
   styleUrls: ['./add-volunteer-modal.component.scss'],
   standalone: true,
   imports: [IonTextarea, IonLabel, IonInput, IonItem, IonList, IonHeader,
-            IonToolbar, IonTitle, IonButtons, IonButton, IonContent, IonIcon]
+            IonToolbar, IonTitle, IonButtons, IonButton, IonContent, IonIcon,
+            CommonModule]
 })
 export class AddVolunteerModalComponent {
   name: string = '';
   email: string = '';
   interestArea: string = '';
+  showThankYouBox = false;
 
   constructor(
     private modalCtrl: ModalController,
@@ -32,12 +35,13 @@ export class AddVolunteerModalComponent {
       if (this.name && this.email && this.interestArea) {
         this.volunteerService.addVolunteer(this.name, this.email, this.interestArea).subscribe(
           response => {
-            this.showToast('Voluntário adicionado com sucesso!');
+            
+            this.showToast('Obrigado pelo seu cadastro!');
             console.log('Voluntário adicionado com sucesso', response);
             this.name = '';
             this.email = '';
             this.interestArea = '';
-            this.closeModal();
+            this.showThankYouBox = true;
           },
           error => {
             this.showToast('Erro ao adicionar voluntário', 'danger');
@@ -67,5 +71,10 @@ export class AddVolunteerModalComponent {
         color: color
       });
       toast.present();
+    }
+
+    closeThankYouBox() {
+      this.showThankYouBox = false;
+      this.closeModal();
     }
 }

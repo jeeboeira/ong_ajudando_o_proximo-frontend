@@ -48,10 +48,16 @@
     </ion-item>
   </ion-list>
 
+    <!-- Caixa de Agradecimento -->
+    <div *ngIf="showThankYouBox" class="thank-you-box" (click)="closeThankYouBox()">
+      <h3>🎉 Parabéns! 🎉<br> Você fez a diferença! </h3>
+      <p>Agradecemos imensamente por se juntar à <strong>ONG Ajudando o Próximo</strong>! Sua inscrição é um grande passo para transformarmos vidas juntos.</p>
+    </div>
+
   <!-- Botão para enviar formulário -->
   <div class="buttons-container">
     <ion-button class="send-form-button" shape="round" (click)="addVolunteer()">
-      Cadastrar
+      Cadastrar Interesse
     </ion-button>
   </div>
 </ion-content>
